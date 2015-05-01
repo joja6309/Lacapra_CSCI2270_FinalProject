@@ -47,6 +47,60 @@ TreeNode* BinaryTree::lookup(int value)
 {
     return lookup(root, value);
 }
+void printNodeKeys(TreeNode *root){
+    if(root->leftChild!=NULL){
+        printNodeKeys(root->leftChild);
+    }
+    cout <<"================"<<endl;
+    cout<< "Node Value : " <<root->key<<endl;
+    if ( root->parent == NULL) 
+    { 
+		cout << "THE ROOT" << endl;
+	} 
+	 else if  (root->parent != NULL) 
+	{ 
+		cout << "Parent: " << root->parent->key<< endl; 
+		
+	}
+	if (root->parent == NULL) 
+	{ 
+		
+	}
+	else if ( root == root->parent->rightChild ) 
+    { 
+		cout << "A Right Child" << endl;
+		
+	}
+	else if (root == root->parent->leftChild) 
+	{ 
+		cout << "A Left Child" << endl;
+		
+	} 
+   if (root->parent == NULL) 
+   { 
+	   
+	 }
+	 
+	 else if (root->rightChild) 
+	 { 
+		cout << "Right Child: " << root->rightChild->key << endl;
+		 
+		 
+	} 
+	if (root->parent == NULL) 
+	{ 
+		
+	}
+	else if (root->leftChild) 
+	{ 
+		cout << "Left Child: " << root->leftChild->key << endl; 
+	   
+	}
+    if(root->rightChild!=NULL){
+        printNodeKeys(root->rightChild);
+    }
+    
+}
 
 TreeNode* BinaryTree::lookup(TreeNode* node, int value)
 {

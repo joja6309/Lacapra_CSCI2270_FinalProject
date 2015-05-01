@@ -47,6 +47,7 @@ class BinaryTree
     bool isBST();
     TreeNode* getRoot() { return root; }
     void prettyPrint();
+    void printNodeKeys(TreeNode *root)
     
     private:
     TreeNode* root;
